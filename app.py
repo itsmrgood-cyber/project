@@ -12,12 +12,9 @@ st.caption("Your Personal Assistant")
 with st.sidebar:
     st.subheader("Pengaturan")
 
-    # Mengambil API key dari secrets Streamlit
-    try:
-        google_api_key = st.secrets["GOOGLE_API_KEY"]
-    except Exception:
-        google_api_key = ""
-        st.error("API Key belum diset di Streamlit Secrets!")
+    # Kotak input untuk API key
+    # type="password" menyembunyikan teks yang diketik (muncul sebagai titik-titik)
+    google_api_key = st.text_input("Google AI API Key", type="password")
 
 
     # Tombol untuk mereset percakapan
